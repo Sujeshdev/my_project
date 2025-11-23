@@ -45,10 +45,10 @@ class Student:
                 mark1 = float(input("kannada:"))
                 mark2 =  float(input("English:"))
                 if dept_name == "s":
-                    mark3 = float(input("mathametic:"))
-                    mark4 = float(input("physics:"))
-                    mark5 = float(input("chemecitry:"))
-                    mark6 = float(input("computer science:"))
+                    mark3 = float(input("Mathametics:"))
+                    mark4 = float(input("Physics:"))
+                    mark5 = float(input("Chemistry:"))
+                    mark6 = float(input("Computer Science:"))
 
                     #calling grade function
                     self.grade(mark1,mark2,mark3,mark4,mark5,mark6)
@@ -57,10 +57,10 @@ class Student:
                     with open("student.txt","a") as f:
                         f.write(f"Name:{name},Regnum:S2025{reg_num},kannada:{mark1},english:{mark2},mathametics:{mark3},physics:{mark4},chemistry:{mark5},computerscience:{mark6},Total:{self.total},Average:{self.avg},Grade:{self.grade}\n")
                 elif dept_name == "c":
-                    mark3 = float(input("economic:"))
-                    mark4 = float(input("accotence:"))
-                    mark5 = float(input("chemecitry:"))
-                    mark6 = float(input("computer science:"))
+                    mark3 = float(input("Accountancy:"))
+                    mark4 = float(input("Economics:"))
+                    mark5 = float(input("Bussiness studies:"))
+                    mark6 = float(input("Statistics:"))
 
                     #calling grade function
                     self.grade(mark1,mark2,mark3,mark4,mark5,mark6)
@@ -68,10 +68,10 @@ class Student:
                     with open("student.txt","a") as f:
                         f.write(f"Name:{name},Regnum:C2025{reg_num},kannada:{mark1},english:{mark2},economic:{mark3},accotence:{mark4},chemicitry:{mark5},computerscienceeconomic:{mark6},Total:{self.total},Average:{self.avg},Grade:{self.grade}\n")
                 else:
-                    mark3 = float(input("mathameti:"))
-                    mark4 = float(input("physics:"))
-                    mark5 = float(input("chemecitry:"))
-                    mark6 = float(input("computer science:"))
+                    mark3 = float(input("History:"))
+                    mark4 = float(input("Political Science:"))
+                    mark5 = float(input("Psychology:"))
+                    mark6 = float(input("Sociology:"))
 
                     #calling grade function
                     self.grade(mark1,mark2,mark3,mark4,mark5,mark6)
