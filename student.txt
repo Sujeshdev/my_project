@@ -1,0 +1,1 @@
+Name:sujesh,Regnum:S2025101,kannada:89.0,english:82.0,mathametics:75.0,physics:94.0,chemistry:65.0,computerscience:82.0,Total:487.0,Average:81.17,Grade:B
