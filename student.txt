@@ -1,0 +1,2 @@
+Name:rahul,Regnum:S2025102,kannada:69.0,english:86.0,mathametics:78.0,physics:69.0,chemistry:87.0,computerscience:97.0,Total:486.0,Average:81.0,Grade:B
+Name:akash,Regnum:S2025103,kannada:78.0,english:64.0,mathametics:84.0,physics:73.0,chemistry:64.0,computerscience:71.0,Total:434.0,Average:72.33,Grade:C
