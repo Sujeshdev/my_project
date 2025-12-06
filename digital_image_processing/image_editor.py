@@ -4,13 +4,16 @@ import cv2
 
 #function to take user input for color, thikness and save option
 def input_user():
-    col = []
-    for i in range(3):
-        col.append(int(input("Enter color value:")))
-    thik = int(input("Enter thikness:"))
-    s = input("you wnat save piture(yes or no):")
-    s = s.lower()
-    return col,thik,s
+    try:
+        col = []
+        for i in range(3):
+            col.append(int(input("Enter color value:")))
+        thik = int(input("Enter thikness:"))
+        s = input("you wnat save piture(yes or no):")
+        s = s.lower()
+        return col,thik,s
+    except Exception as e:
+        print("War:",e)
 
 #class to handle photo operations
 class Photo:
@@ -22,9 +25,12 @@ class Photo:
 
     #method to save edited image
     def save(self,img):
+        try:
         save_path = input("Enter folder path:")
         cv2.imwrite(save_path,img)
         print("Piture saved at locattion:..save/line.jpg")
+        except Exception as e:
+            print("War:",e)
 
     #method to draw line on image
     def line(self,x1,y1,x2,y2,col,thik,s):
@@ -77,62 +83,65 @@ class Photo:
         
 #using while loop to create menu driven program
 while True:
-    print("Menu")
-    print("Draw line-->1")
-    print("Draw squre-->2")
-    print("Draw circle-->3")
-    print("Text -->4")
-    print("Exit-->0")
-    choice = int(input("Enter your choice:"))
-
-    #variable to take user input image path
     try:
-        img_path = input("Enter your image path:")
+        print("Menu")
+        print("Draw line-->1")
+        print("Draw squre-->2")
+        print("Draw circle-->3")
+        print("Text -->4")
+        print("Exit-->0")
+        choice = int(input("Enter your choice:"))
+    
+        #variable to take user input image path
+        try:
+            img_path = input("Enter your image path:")
+        except Exception as e:
+            print("War:",e)
+    
+        #create Photo object
+        P1 = Photo(img_path)
+    
+        if choice == 1:
+            try:
+                #by comprehension take points from user
+                x1,y1 = [int(i) for i in input("Enter first point:").split(" ")]
+                x2,y2 = [int(i) for i in input("Enter second point:").split(" ")]
+    
+                #call input_user function to take color,thikness and save option
+                col,thik,s = input_user()
+    
+                #call line method
+                P1.line(x1,y1,x2,y2,col,thik,s)
+            except Exception as e:
+                print("War:",e)
+    
+        elif choice == 2:
+            try:
+                x1,y1 = [int(i) for i in input("Enter first point:").split(" ")]
+                x2,y2 = [int(i) for i in input("Enter second point:").split(" ")]
+                col ,thik, s = input_user()
+                P1.rect(x1,y1,x2,y2,col,thik,s)
+            except Exception as e:
+                print("War:",e)
+    
+        elif choice == 3:
+            try:
+                cir_radius = int(input("Enter circle radius:"))
+                col,thik,s = input_user()
+                P1.circle(cir_radius,col,thik,s)      
+            except Exception as e:
+                print("War:",e)
+    
+        elif choice == 4:
+            try:
+                text = input("Enter your text:")
+                x,y = [int(i) for i in input("Enter point:").split(" ")]
+                sc = float(input("Enter scale:"))
+                col,thik,s = input_user()
+                P1.text(text,col,thik,s,x,y,sc)
+            except Exception as e:
+                print("War:",e)
+        else:
+            break
     except Exception as e:
         print("War:",e)
-
-    #create Photo object
-    P1 = Photo(img_path)
-
-    if choice == 1:
-        try:
-            #by comprehension take points from user
-            x1,y1 = [int(i) for i in input("Enter first point:").split(" ")]
-            x2,y2 = [int(i) for i in input("Enter second point:").split(" ")]
-
-            #call input_user function to take color,thikness and save option
-            col,thik,s = input_user()
-
-            #call line method
-            P1.line(x1,y1,x2,y2,col,thik,s)
-        except Exception as e:
-            print("War:",e)
-
-    elif choice == 2:
-        try:
-            x1,y1 = [int(i) for i in input("Enter first point:").split(" ")]
-            x2,y2 = [int(i) for i in input("Enter second point:").split(" ")]
-            col ,thik, s = input_user()
-            P1.rect(x1,y1,x2,y2,col,thik,s)
-        except Exception as e:
-            print("War:",e)
-
-    elif choice == 3:
-        try:
-            cir_radius = int(input("Enter circle radius:"))
-            col,thik,s = input_user()
-            P1.circle(cir_radius,col,thik,s)      
-        except Exception as e:
-            print("War:",e)
-
-    elif choice == 4:
-        try:
-            text = input("Enter your text:")
-            x,y = [int(i) for i in input("Enter point:").split(" ")]
-            sc = float(input("Enter scale:"))
-            col,thik,s = input_user()
-            P1.text(text,col,thik,s,x,y,sc)
-        except Exception as e:
-            print("War:",e)
-    else:
-        break
