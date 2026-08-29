@@ -1,6 +1,6 @@
 import mysql.connector as myconn
 
-mydb = myconn.connect(host = "localhost",user = "root",password = "narutoonepiece@2025",database = "learning_db")
+mydb = "Connect database"
 
 class Student:
     def query(self):

@@ -4,7 +4,7 @@ from datetime import datetime
 import sys
 
 #connect to database
-mydb = ms.connect(host = "localhost",user = "root",password = "narutoonepiece@2025",database = "library_db")
+mydb = "connect database"
 
 #creat cursor object
 cursur = mydb.cursor()

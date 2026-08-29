@@ -26,9 +26,9 @@ class Photo:
     #method to save edited image
     def save(self,img):
         try:
-        save_path = input("Enter folder path:")
-        cv2.imwrite(save_path,img)
-        print("Piture saved at locattion:..save/line.jpg")
+            save_path = input("Enter folder path:")
+            cv2.imwrite(save_path,img)
+            print(f"Piture saved at locattion:{save_path}")
         except Exception as e:
             print("War:",e)
 
