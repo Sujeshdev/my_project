@@ -333,7 +333,7 @@ while True:
         
         #User section
         elif choice == 2:
-            print("\nWELCOME USER")
+            print("\n====WELCOME USER=====")
             while True:
                 try:
                     #design user menu
