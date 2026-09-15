@@ -10,13 +10,13 @@ while True:
     try:
         choice = int(input("Choice your option:"))
         if choice == 1:
-            ran_num = ran.randint(1,100)
+            random_number = ran.randint(1,100)
             score = 0
-            ind = 0
-            while ind <= 10:
-                if ind == 10:
+            round = 0
+            while round <= 10:
+                if round == 10:
                     print("GAME OVER")
-                    print("The number",ran_num)
+                    print("The number",random_number)
                     print("your score is:",score)
                     with open("randomgame.txt","a") as f:
                         f.write(f"Score:{score}\n")
@@ -27,25 +27,24 @@ while True:
                     # print("\n")
                     break
                 try:
-                    num = int(input("Enter your number(quit game enter 0):"))                    
+                    user_number = int(input("Enter your number(quit game enter 0):"))                    
                     
-                    if num == ran_num:
+                    if user_number == random_number:
                         print("congratulation you find it")
                         score += 1
-                        ind = 0
-                        ran_num = ran.randint(1,100)
-                        # print(ran_num)
+                        round = 0
+                        random_number = ran.randint(1,100)
 
-                    elif num == 0:
-                         ind = 10
+                    elif user_number == 0:
+                         round = 10
 
-                    elif num > ran_num:
+                    elif user_number > random_number:
                             print("To big")
-                            ind += 1
+                            round += 1
 
                     else:
                             print("To small")
-                            ind += 1
+                            round += 1
 
                 except:
                      print("enter number")            
